@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 
 export const siteConfigs: SiteConfig = {
   author: "Admibrill",
-  title: "Admibrill's Blog",
+  title: "埃氮幂の命名空间",
   siteUrl: "https://blog.qyadbr.top",
   avatar: "https://blog.qyadbr.top/avatar_.ico",
   twikooEnv: "https://serene-zuccutto-63ff75.netlify.app/.netlify/functions/twikoo",
@@ -39,11 +39,11 @@ export const siteConfigs: SiteConfig = {
         : "https://blogend.qyadbr.top";
     }
   })(),
-  fcircleUrl: "https://fcircle.yaria.top",
+  // fcircleUrl: "https://fcircle.yaria.top",
   socials: [
     {
       name: "Github",
-      url: "https://github.com/admmibrill",
+      url: "https://github.com/admibrill",
       icon: <Icon icon="fa6-brands:github" />,
     },
     {
@@ -75,13 +75,6 @@ export const MenuItems: MenuItem[] = [
     link: "",
     icon: <Icon icon="fa6-solid:newspaper" />,
     childs: [
-      {
-        name: "随便逛逛",
-        icon: <Icon icon="fa6-solid:paper-plane" />,
-        func: () => {
-          (window as any).toRandomPost();
-        },
-      },
       {
         name: "归档",
         link: "/archives",
@@ -153,21 +146,21 @@ export const MenuItems: MenuItem[] = [
     link: "",
     icon: <Icon icon="fa6-solid:computer" />,
     childs: [
-        {
-            name: "闲言碎语",
-            link: "/essay",
-            icon: <Icon icon="fa6-solid:lightbulb" />,
-        },
-        {
-            name: "统计信息",
-            link: "/charts",
-            icon: <Icon icon="fa6-solid:chart-line" />,
-        },
-        {
-            name: "时间戳",
-            link: "/timestamp",
-            icon: <Icon icon="fa6-solid:clock" />,
-        },
+      {
+        name: "闲言碎语",
+        link: "/essay",
+        icon: <Icon icon="fa6-solid:lightbulb" />,
+      },
+      {
+        name: "统计信息",
+        link: "/charts",
+        icon: <Icon icon="fa6-solid:chart-line" />,
+      },
+      {
+        name: "时间戳",
+        link: "/timestamp",
+        icon: <Icon icon="fa6-solid:clock" />,
+      },
 
     ]
   }

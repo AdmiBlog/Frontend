@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import "katex/dist/katex.min.css";
 import React from "react";
 
-export default function KaTex() {
+export default function KaTeX() {
   useEffect(() => {
     (async () => {
       renderMathInText(document.body, {

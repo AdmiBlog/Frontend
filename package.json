@@ -23,6 +23,7 @@
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.1.0",
     "@sergeymyssak/nextjs-sitemap": "^2.0.3",
+    "@tailwindcss/postcss": "^4.1.16",
     "@types/color": "^3.0.6",
     "@types/color-name": "^2.0.0",
     "@types/fancybox": "^3.5.7",

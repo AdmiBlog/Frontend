@@ -61,9 +61,7 @@ export default function Welcome() {
           showAction: false,
           text:
             referrer &&
-            referrer.indexOf("yaria.top") == -1 &&
-            referrer.indexOf("0v0.my") == -1 &&
-            referrer.indexOf("yisous.xyz") == -1
+            referrer.indexOf("qyadbr.top.top") == -1 
               ? `欢迎来自${new URL(referrer).hostname}的朋友访问本站！`
               : "欢迎访问本站！",
         });
