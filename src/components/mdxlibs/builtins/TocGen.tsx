@@ -1,5 +1,5 @@
 import JSMD5 from "js-md5";
-import { TOCItem } from "../../asides/CardToc";
+import { TOCItem } from "../../asidelibs/CardToc";
 
 const generateTOC = (mdContent: string): TOCItem[] => {
   const tocTree: TOCItem[] = [];

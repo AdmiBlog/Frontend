@@ -5,6 +5,7 @@
   background-color: var(--admi-acrylic2);
   border-right: var(--admi-border);
   transition: border-right-color 0.3s;
+  z-index: 999
 }
 #navbar:hover{
   border-right-color: var(--admi-theme);

@@ -2,13 +2,16 @@
 import "styles/Navbar.css";
 import { MenuItems,siteConfigs } from "@/config";
 import Link from "next/link";
+import { updateSettings,SettingsContext } from "@/utils/settings"; 
 import { MenuItemChild } from "@/interfaces/menuitem";
 import { useState } from "react";
 import { Icon } from "@iconify/react";
+import { useContext } from "react";
 
 export function Navbar() {
   const [hoveringElement,setHoveringElement]=useState("");
   const [showNavbar,setShowNavbar]=useState(false);
+  const {settings,setSettings}=useContext(SettingsContext);
   return (
     <>
       <div id="navbar" className={
@@ -103,7 +106,15 @@ export function Navbar() {
           <button
             className="menu-button"
             title="颜色模式"
-            onClick={undefined}
+            onClick={()=>{
+              if(settings.colorMode=="light"){
+                setSettings({...settings,colorMode:"dark"});
+                updateSettings({...settings,colorMode:"dark"});
+              }else{
+                setSettings({...settings,colorMode:"light"});
+                updateSettings({...settings,colorMode:"light"});
+              }
+            }}
           >
             <Icon icon="fa6-solid:circle-half-stroke" />
           </button>
@@ -136,11 +147,11 @@ export function Navbar() {
             <Icon icon="fa6-solid:paper-plane" />
           </button>
           <button
-            className="menu-button return-top"
+            className="menu-button"
             title="返回顶部"
             onClick={undefined}
           >
-            <span>100</span>
+            <Icon icon="fa6-solid:arrow-up" />
           </button>
         </div>
         <button 
@@ -152,10 +163,6 @@ export function Navbar() {
         >
           <Icon icon="fa6-solid:bars" />
         </button>
-        {/*小链接、音乐、
-        颜色模式、繁简转换、
-        开往、搜索、
-        随便逛逛、返回顶部*/}
       </div>
     </>
   );
