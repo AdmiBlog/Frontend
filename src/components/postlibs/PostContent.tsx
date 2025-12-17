@@ -17,7 +17,7 @@ export default function PostContent({
 }) {
   return (
     <article id="article-container" className="card-widget">
-      <PostSummary slug={postInfo.slug!} />
+      {/* <PostSummary slug={postInfo.slug!} /> */}
       <div id="post-maincontent">
         <MDToTSXWithPlugins mdContent={mdContent} />
       </div>

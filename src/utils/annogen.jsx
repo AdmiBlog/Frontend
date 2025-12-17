@@ -7,7 +7,7 @@ const genanno = cache(async () => {
       type: "get",
       url: "https://apis.map.qq.com/ws/location/v1/ip",
       data: {
-        key: "T3EBZ-TJ7LI-YRBG2-5ZLUR-KD3OS-U6BJO",
+        key: "ZN5BZ-ZLLKC-JK72C-ATWFE-B2OEO-JUFWU",
         output: "jsonp",
       },
       dataType: "jsonp",
@@ -30,8 +30,7 @@ const genanno = cache(async () => {
         let dist;
         try {
           dist = getDistance(
-            107.38779,
-            29.70239,
+            114.33657,30.52694,
             ipLocation.result.location.lng,
             ipLocation.result.location.lat,
           );
@@ -278,17 +277,11 @@ const genanno = cache(async () => {
             <br />
             欢迎来自<span>{pos}</span>的小伙伴，{timeChange}
             <br />
-            你距离Ariasaka约有<span>{dist}</span>公里，{posdesc}
-            <br />
-            本网站的Twikoo评论系统使用
-            <a className="normal-a" href="https://weavatar.com">
-              WeAvatar
-            </a>
-            头像系统，请自行绑定邮箱配置
+            你距离Admibrill约有<span>{dist}</span>公里，{posdesc}
           </>,
         );
       },
-      error: () => resolve("欢迎来到Ariaの新博客喵，基于Next.js和React构建。"),
+      error: () => resolve("欢迎来到Admibrillの博客，基于Next.js和React构建。"),
     }),
   );
 });

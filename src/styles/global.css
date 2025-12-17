@@ -72,6 +72,7 @@
 body{
   font-family: "ZhuZiAWan", sans-serif;
   background-image: url('/111.png');
+  background-attachment: fixed;
   margin: 0;
 }
 body::after{
@@ -92,8 +93,12 @@ body::after{
   position: absolute;
   left: 150px;
   right: 0px;
-  display: block;
+  min-height: 100%;
+  /* display: block; */
 }
+
+
+
 @media screen and (max-width: 768px) {
   .primary-container{
     position: absolute;

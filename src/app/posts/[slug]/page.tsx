@@ -28,7 +28,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <>
       <title>{currentPost.title + " | " + siteConfigs.title}</title>
-      <style>{`#navbar{position:fixed}`}</style>
+      {/* <style>{`#navbar{position:sticky}`}</style> */}
       <PostHeader postInfo={currentPost} />
       <div id="main-container" className="post">
         <PostContent

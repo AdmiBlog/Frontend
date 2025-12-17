@@ -44,7 +44,7 @@ export default function PostSummary({ slug }: { slug: string }) {
       if (res.status === 429) {
         return summary;
       }
-      return "摘要加载失败了QwQ";
+      return "摘要加载失败";
     }
 
     const data = await res.json();
@@ -95,7 +95,7 @@ export default function PostSummary({ slug }: { slug: string }) {
     <div className="post-summary">
       <span className="post-summary-title">
         <Icon className="post-summary-icon" icon="octicon:dependabot-16" />
-        这是文章摘要！QwQ
+        文章摘要
         <button
           className={`post-summary-refreshbutton ${isLoading ? "loading" : ""}`}
           onClick={handleRefresh}

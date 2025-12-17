@@ -31,7 +31,13 @@
 }
 
 #footer {
-  margin-top: auto;
+  /* margin-top: auto; */
+  /* margin-bottom: 0px; */
+  /* bottom: 0px; */
+  position: sticky;
+  top: 100%;
+  /* left: 0px; */
+  /* right: 0px; */
 }
 
 div{

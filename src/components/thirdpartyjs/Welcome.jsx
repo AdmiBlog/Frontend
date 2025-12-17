@@ -45,13 +45,13 @@ export default function Welcome() {
   useEffect(() => {
     if (month === 12 && day === 13) {
       document.documentElement.style.filter = "grayscale(100%)";
-      setGray(
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `body { filter: grayscale(100%); }`,
-          }}
-        ></style>,
-      );
+      // setGray(
+      //   <style
+      //     dangerouslySetInnerHTML={{
+      //       __html: `body { filter: grayscale(100%); }`,
+      //     }}
+      //   ></style>,
+      // );
     }
     (async () => {
       if (localStorage.getItem("showedWelcome") != "1") {
@@ -61,7 +61,7 @@ export default function Welcome() {
           showAction: false,
           text:
             referrer &&
-            referrer.indexOf("qyadbr.top.top") == -1 
+            referrer.indexOf("qyadbr.top") == -1 
               ? `欢迎来自${new URL(referrer).hostname}的朋友访问本站！`
               : "欢迎访问本站！",
         });

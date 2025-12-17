@@ -53,7 +53,6 @@
 }
 
 .tk-meta:has(.tk-tag-green) > .tk-nick {
-  color: #960 !important;
   line-height: 1.5;
 }
 
@@ -64,7 +63,7 @@
 
 .tk-tag-green {
   border-radius: 2px !important;
-  background-color: #960 !important;
+  background-color: #00f !important;
   -webkit-border-radius: 2px !important;
   -moz-border-radius: 2px !important;
   -ms-border-radius: 2px !important;

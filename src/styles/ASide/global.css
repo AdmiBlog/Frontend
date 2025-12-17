@@ -37,7 +37,7 @@
 
 .aside-sticky-container {
   position: sticky;
-  top: 70px;
+  top: 15px;
 }
 
 .card-viewmore {
@@ -52,10 +52,24 @@
   color: var(--admi-theme);
 }
 
+#main-container.home{
+  margin: 10px;
+  display: block;
+}
+
+#main-container.homepage{
+  margin: 10px;
+  display: flex;
+}
+
+#row-container{
+  display: flex;
+  flex-direction: row;
+}
+
 @media screen and (max-width: 600px) {
   #main-container {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 10px;
   }
 }
 

@@ -63,7 +63,7 @@ export const siteConfigs: SiteConfig = {
     },
     {
       name: "RSS",
-      url: "/feed.xml",
+      url: "/atom.xml",
       icon: <Icon icon="fa6-solid:rss" />,
     },
   ],
