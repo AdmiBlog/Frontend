@@ -13,7 +13,7 @@ declare interface FLinkItem{
 
 declare interface FlinkResult{
   link_list: FLinkItem[],
-  count: number
+  length: number
 }
 
 export async function GET() {
@@ -26,7 +26,7 @@ export async function GET() {
   }
   let result: FlinkResult ={
     link_list: [],
-    count: 0
+    length: 0
   }
   for(let i=0;i<flinks.length;i++){
     for(let j=0;j<flinks[i].links.length;j++){
@@ -38,7 +38,7 @@ export async function GET() {
           descr: flinks[i].links[j].description,
         }
       )
-      result.count++;
+      result.length++;
     }
   }
   return new Response(
