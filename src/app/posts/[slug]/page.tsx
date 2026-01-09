@@ -9,7 +9,7 @@ import React from "react";
 async function getPostInfo(slug: string): Promise<Post> {
   return new Promise((resolve, reject) => {
     fetch(`${siteConfigs.backEndUrl}/get/post/postBySlug?slug=${slug}`, {
-      next: { revalidate: 7200, tags: [slug] },
+      next: { revalidate: 200, tags: [slug] },
     }).then(async (res) => {
       if (!res.ok) reject();
       const data = await res.json();

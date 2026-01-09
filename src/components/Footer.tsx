@@ -89,6 +89,16 @@ export default function Footer() {
             );
           })}
         </div>
+        <div>
+          <a className="a-footer" href="/privacy">
+            隐私政策
+          </a>
+        </div>
+        <div id="div-comment-protocol">
+          <a className="a-footer" href="/comment-protocol">
+            评论协议
+          </a>
+        </div>
         <div id="footer-rundays">{footerRunDaysContent}</div>
       </div>
     </footer>

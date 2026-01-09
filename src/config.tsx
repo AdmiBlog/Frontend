@@ -16,30 +16,7 @@ export const siteConfigs: SiteConfig = {
   pageMaxPosts: 16,
   falldownAvatar: "https://img.0v0.my/2024/09/06/66dabf7f748c8.jpg",
   falldownImg: "https://img.0v0.my/2024/08/31/66d30329375a5.webp",
-  backEndUrl: (() => {
-    const isServer = typeof window === "undefined";
-    const isProd = process.env.NODE_ENV === "production";
-    const isBuilding = process.env.BUILDING === "true";
-    const isVercel = process.env.IS_VERCEL === "true";
-    if (isVercel) {
-      return "https://blogend.qyadbr.top";
-    }
-    if (isServer) {
-      // 服务器端
-      if (isBuilding) {
-        return "https://blogend.qyadbr.top";
-      }
-      return isProd
-        ? "https://blogend.qyadbr.top"
-        : "https://blogend.qyadbr.top";
-    } else {
-      // 客户端
-      return isProd
-        ? "https://blogend.qyadbr.top"
-        : "https://blogend.qyadbr.top";
-    }
-  })(),
-  // fcircleUrl: "https://fcircle.yaria.top",
+  backEndUrl: "http://127.0.0.1:2333",
   socials: [
     {
       name: "Github",
@@ -152,14 +129,14 @@ export const MenuItems: MenuItem[] = [
         icon: <Icon icon="fa6-solid:lightbulb" />,
       },
       {
-        name: "统计信息",
-        link: "/charts",
-        icon: <Icon icon="fa6-solid:chart-line" />,
+        name: "时间戳",
+        link: "/timeline",
+        icon: <Icon icon="fa6-solid:clock" />,
       },
       {
-        name: "时间戳",
-        link: "/timestamp",
-        icon: <Icon icon="fa6-solid:clock" />,
+        name: "声明",
+        link: "/license",
+        icon: <Icon icon="fa6-solid:bell" />,
       },
 
     ]

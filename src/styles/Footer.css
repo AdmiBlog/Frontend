@@ -43,3 +43,11 @@
 div{
   color: var(--admi-fontcolor);
 }
+
+#div-comment-protocol{
+  padding-left: 5px;
+}
+
+a.a-footer:hover{
+  color: var(--admi-theme);
+}
