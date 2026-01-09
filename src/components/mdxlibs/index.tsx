@@ -16,7 +16,7 @@ import JSMD5 from "js-md5";
 import Markdown from "markdown-to-jsx";
 import FancyBox from "../thirdpartyjs/FancyBox";
 import HLJSNum from "../thirdpartyjs/HLJSNum";
-import KaTeX from "../thirdpartyjs/KaTeX";
+import KaTex from "../thirdpartyjs/KaTex";
 import Pangu from "../thirdpartyjs/Pangu";
 // import FriendLinks from "../FriendLinks";
 
@@ -126,7 +126,7 @@ export default function MDToTSXWithPlugins({
         </Markdown>
         <FancyBox />
         <HLJSNum />
-        <KaTeX />
+        <KaTex />
         <Pangu container="post-maincontent" />
       </>
     );
@@ -156,7 +156,7 @@ export default function MDToTSXWithPlugins({
         <pre style={{ whiteSpace: "pre-wrap" }}>{mdContent}</pre>
         <FancyBox />
         <HLJSNum />
-        <KaTeX />
+        <KaTex />
         <Pangu container="post-maincontent" />
       </div>
     );
