@@ -3,6 +3,7 @@ import "styles/PostContent.css";
 import React from "react";
 import { siteConfigs } from "@/config";
 import MDToTSXWithPlugins from "@/components/mdxlibs";
+import { notFound } from "next/navigation";
 
 export const metadata = {
   title: `声明 | ${siteConfigs.title}`,

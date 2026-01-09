@@ -4,6 +4,7 @@ import React from "react";
 import { siteConfigs } from "@/config";
 import MDToTSXWithPlugins from "@/components/mdxlibs";
 import FriendLinks  from "@/components/FriendLinks"
+import { notFound } from "next/navigation";
 
 export const metadata = {
   title: `友链 | ${siteConfigs.title}`,
