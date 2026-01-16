@@ -17,7 +17,7 @@ export const siteConfigs: SiteConfig = {
   falldownAvatar: "https://img.0v0.my/2024/09/06/66dabf7f748c8.jpg",
   falldownImg: "https://img.0v0.my/2024/08/31/66d30329375a5.webp",
   backEndUrl: "https://blogend.qyadbr.top",
-  socials: [
+  socials: [ 
     {
       name: "Github",
       url: "https://github.com/admibrill",
