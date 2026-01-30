@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 
 
 function JTPYStr() {
@@ -18,12 +19,12 @@ function setLang() {
     document.documentElement.lang = targetEncoding === 1 ? 'zh-TW' : 'zh-CN';
 }
 
-function translateText(txt) {
+function translateText(txt: string|undefined) {
     if (!txt) return '';
     return currentEncoding === targetEncoding ? txt : (currentEncoding === 1 ? Simplized(txt) : Traditionalized(txt));
 }
 
-function translateBody(fobj) {
+function translateBody(fobj: Node | undefined) {
     const objs = fobj?.childNodes || document.body.childNodes;
 
     objs.forEach(obj => {
