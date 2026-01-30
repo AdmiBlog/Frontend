@@ -61,7 +61,7 @@ export function translatePage() {
     // utils.snackbarShow(targetEncoding === 1 ? '你已切換為繁體' : '你已切换为简体');
     // utils.saveToLocal.set(targetEncodingCookie, targetEncoding, 2);
     setLang();
-    translateBody();
+    translateBody(undefined);
 }
 
 function Traditionalized(cc: string) {
