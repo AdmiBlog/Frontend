@@ -7,6 +7,9 @@ export const siteConfigs: SiteConfig = {
   author: "Admibrill",
   title: "埃氮幂の命名空间",
   siteUrl: "https://blog.qyadbr.top",
+  backEndUrl: "https://blogend.qyadbr.top",
+  // siteUrl: "http://localhost:3000",
+  // backEndUrl: "http://127.0.0.1:2333",
   avatar: "https://blog.qyadbr.top/avatar_.ico",
   twikooEnv: "https://serene-zuccutto-63ff75.netlify.app/.netlify/functions/twikoo",
   createYear: 2024,
@@ -16,7 +19,6 @@ export const siteConfigs: SiteConfig = {
   pageMaxPosts: 16,
   falldownAvatar: "https://img.0v0.my/2024/09/06/66dabf7f748c8.jpg",
   falldownImg: "https://img.0v0.my/2024/08/31/66d30329375a5.webp",
-  backEndUrl: "https://blogend.qyadbr.top",
   socials: [ 
     {
       name: "Github",

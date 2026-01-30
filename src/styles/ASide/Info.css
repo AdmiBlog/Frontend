@@ -22,7 +22,7 @@
   left: 0;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .card-info::before {
     background-color: #0004 !important;
   }

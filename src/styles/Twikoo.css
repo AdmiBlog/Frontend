@@ -99,7 +99,7 @@
   color: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .tk-main > .tk-content {
     background-color: #303030 !important;
   }
@@ -117,7 +117,7 @@
   color: var(--admi-theme) !important;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .OwO .OwO-body {
     background-color: black !important;
     color: var(--admi-fontcolor) !important;

@@ -130,7 +130,7 @@ blockquote {
   outline: 1px solid #dfdfdf;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   blockquote {
     color: rgb(156, 156, 156);
     outline: 1px solid #757575;
@@ -165,7 +165,7 @@ table:not(code table) {
   border: var(--admi-border);
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   th {
     background-color: #5e5e5edd;
   }
@@ -182,7 +182,7 @@ table:not(code table) {
   padding: 15px;
 }
 
-@media (prefers-color-scheme: light) {
+[data-theme="light"] {
   .hljs-folder summary {
     color: #848484;
     background: #f0f0f0;
@@ -205,7 +205,7 @@ table:not(code table) {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .hljs-folder summary {
     color: #b7bec9;
     background: #424346;
@@ -493,7 +493,7 @@ table:not(code table) {
   background-color: white;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .etag-link {
     background: #2c2c2c;
   }
@@ -799,7 +799,7 @@ table:not(code table) {
     no-repeat bottom / 100% 30%;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   #article-container strong {
     background: linear-gradient(rgb(255 51 184 / 30%), rgb(255 51 184 / 30%))
       no-repeat bottom / 100% 30% !important;
@@ -816,14 +816,14 @@ table:not(code table) {
   padding-right: 10px;
   left: 0;
   text-align: right;
-  background-color: #fafafa;
+  background-color: #2b2b2b;
 }
 
 .hljs-ln-code {
   padding-left: 28px !important;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .hljs-ln-numbers {
     background-color: #2b2b2b;
   }
@@ -976,7 +976,7 @@ span[style="undefined:invert"] {
   background-color: var(--admi-fontcolor);
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   span[style="undefined:invert"] {
     color: black;
   }
@@ -1027,7 +1027,7 @@ span[style="undefined:invert"] {
   word-wrap: break-word;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   #post-maincontent code:not(#post-maincontent pre.hljs code) {
     background: #2f2f2f !important;
   }

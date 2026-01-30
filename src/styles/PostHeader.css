@@ -180,7 +180,7 @@
   fill: #f7f9fe;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .parallax > use:nth-child(1) {
     animation-delay: -2s;
     animation-duration: 7s;

@@ -4,14 +4,32 @@ import { MenuItems,siteConfigs } from "@/config";
 import Link from "next/link";
 import { updateSettings,SettingsContext } from "@/utils/settings"; 
 import { MenuItemChild } from "@/interfaces/menuitem";
-import { useState } from "react";
+import { useRouter } from "nextjs-toploader/app";
+import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import { useContext } from "react";
+import SearchBox from "components/navlibs/SearchBox";
+import { translatePage } from "@/utils/tw_cn"
 
 export function Navbar() {
+  const router = useRouter();
   const [hoveringElement,setHoveringElement]=useState("");
   const [showNavbar,setShowNavbar]=useState(false);
   const {settings,setSettings}=useContext(SettingsContext);
+  const [searchBoxShow, setSearchBoxShow] = useState(false);
+  const [transBtn,setTransBtn]=useState("繁");
+  useEffect(()=>{
+    (window as any).toRandomPost = async () => {
+      const res = await fetch(`${siteConfigs.backEndUrl}/get/post/postSlugs`, {
+        next: { revalidate: 7200, tags: ["posts"] },
+      });
+      if (res.ok) {
+        const posts: string[] = (await res.json()).data;
+        const randomIndex: number = Math.round(Math.random() * posts.length);
+        router.push(`/posts/${posts[randomIndex]}`);
+      }
+    };
+  },[]);
   return (
     <>
       <div id="navbar" className={
@@ -121,35 +139,49 @@ export function Navbar() {
           <button
             className="menu-button fanjian"
             title="繁简转换"
-            onClick={undefined}
+            onClick={()=>{
+              translatePage();
+              setTransBtn(transBtn=="繁" ? "简" : "繁");
+            }}
           >
-            <span>繁</span>
+            <span>{transBtn}</span>
           </button>
           <button
             className="menu-button"
             title="开往"
-            onClick={undefined}
+            onClick={() => {
+              window.location.href = "https://travellings.cn/go.html";
+            }}
           >
             <Icon icon="fa6-solid:train-subway" />
           </button>
           <button
             className="menu-button"
             title="搜索"
-            onClick={undefined}
+            onClick={() => {
+              setSearchBoxShow(!searchBoxShow);
+              setTimeout(() => {
+                document.getElementById("search-box-input")?.focus();
+              }, 10);
+            }}
           >
             <Icon icon="fa6-solid:magnifying-glass" />
           </button>
           <button
             className="menu-button"
             title="随便逛逛"
-            onClick={undefined}
+            onClick={() => {
+              (window as any).toRandomPost();
+            }}
           >
             <Icon icon="fa6-solid:paper-plane" />
           </button>
           <button
             className="menu-button"
             title="返回顶部"
-            onClick={undefined}
+            onClick={()=>{
+              document.documentElement.scroll({ behavior: "smooth", top: 0 });
+            }}
           >
             <Icon icon="fa6-solid:arrow-up" />
           </button>
@@ -164,6 +196,7 @@ export function Navbar() {
           <Icon icon="fa6-solid:bars" />
         </button>
       </div>
+      <SearchBox show={searchBoxShow} closeFunction={setSearchBoxShow} />
     </>
   );
 }
