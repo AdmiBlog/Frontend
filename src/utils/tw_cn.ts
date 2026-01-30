@@ -19,21 +19,31 @@ function setLang() {
     document.documentElement.lang = targetEncoding === 1 ? 'zh-TW' : 'zh-CN';
 }
 
+interface ObjectNode extends ChildNode {
+    childNodes: NodeListOf<ObjectNode>,
+    tagName?: string,
+    title?: string,
+    alt?: string,
+    placeholder?: string,
+    value?: string,
+    type?: string,
+    data?: string,
+}
+
 function translateText(txt: string|undefined) {
     if (!txt) return '';
     return currentEncoding === targetEncoding ? txt : (currentEncoding === 1 ? Simplized(txt) : Traditionalized(txt));
 }
 
-function translateBody(fobj: Node | undefined) {
-    const objs = fobj?.childNodes || document.body.childNodes;
+function translateBody(fobj: ObjectNode | undefined) {
+    const objs : NodeListOf<ObjectNode>= fobj?.childNodes || document.body.childNodes;
 
     objs.forEach(obj => {
-        if (['BR', 'HR'].includes(obj.tagName)) return;
 
         if (obj.title) obj.title = translateText(obj.title);
         if (obj.alt) obj.alt = translateText(obj.alt);
         if (obj.placeholder) obj.placeholder = translateText(obj.placeholder);
-        if (obj.tagName === 'INPUT' && obj.value && !['text', 'hidden'].includes(obj.type)) {
+        if (obj.tagName === 'INPUT' && obj.value ) {
             obj.value = translateText(obj.value);
         }
         if (obj.nodeType === 3) {
@@ -54,7 +64,7 @@ export function translatePage() {
     translateBody();
 }
 
-function Traditionalized(cc) {
+function Traditionalized(cc: string) {
     const ss = JTPYStr();
     const tt = FTPYStr();
     return Array.from(cc).map(char => {
@@ -63,7 +73,7 @@ function Traditionalized(cc) {
     }).join('');
 }
 
-function Simplized(cc) {
+function Simplized(cc: string) {
     const ss = JTPYStr();
     const tt = FTPYStr();
     return Array.from(cc).map(char => {
