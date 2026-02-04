@@ -1,24 +1,26 @@
 "use client";
-import { useRef } from "react";
+import { ReactElement } from "react";
 
-export default function TimeTag({
+export default function TimeLineTag({
+  children,
   time,
-  content,
+  color,
 }: {
+  children: ReactElement[] | ReactElement;
   time: string;
-  content: string;
+  color?: string;
 }) {
   
   return (
-      <div className="etag-timeline">
-        <div className="etag-timeline-item">
-          <div className="etag-timeline-item-title">
-            <div className="etag-timeline-item-circle">
-              <p>{time}</p>
-            </div>
+    <div className={`etag-timeline${color?" "+color:""}`}>
+      <div className="timeline-item">
+        <div className="timeline-item-title">
+          <div className="item-circle">
+            <p>{time}</p>
           </div>
-        <div className="etag-timeline-item-content">
-          <p>{content}</p>
+        </div>
+        <div className="timeline-item-content">
+          {children}
         </div>
       </div>
     </div>

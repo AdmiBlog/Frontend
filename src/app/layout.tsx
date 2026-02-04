@@ -30,6 +30,7 @@ export default function RootLayout({
       <head>
         <title>{siteConfigs.title}</title>
         <script src="/loadColorMode.js" />
+        <link rel="icon" href="/avatar_.ico" sizes="any" />
       </head>
       <body>
         <SettingsContext.Provider value={{settings,setSettings}}>

@@ -10,14 +10,27 @@ import { Icon } from "@iconify/react";
 import { useContext } from "react";
 import SearchBox from "components/navlibs/SearchBox";
 import { translatePage } from "@/utils/tw_cn"
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
   const router = useRouter();
+  const pathname=usePathname();
   const [hoveringElement,setHoveringElement]=useState("");
   const [showNavbar,setShowNavbar]=useState(false);
   const {settings,setSettings}=useContext(SettingsContext);
   const [searchBoxShow, setSearchBoxShow] = useState(false);
   const [transBtn,setTransBtn]=useState("繁");
+  const [showTocBtn,setShowTocBtn]=useState(false);
+  const [tocHide,setTocHide]=useState(true);
+  function setToc() {
+    setTocHide(!tocHide);
+    if (tocHide)
+      document.querySelector(".card-toc")!.className =
+        "card-widget card-aside card-toc";
+    else
+      document.querySelector(".card-toc")!.className =
+        "card-widget card-aside card-toc mobile-show";
+  }
   useEffect(()=>{
     (window as any).toRandomPost = async () => {
       const res = await fetch(`${siteConfigs.backEndUrl}/get/post/postSlugs`, {
@@ -29,6 +42,9 @@ export function Navbar() {
         router.push(`/posts/${posts[randomIndex]}`);
       }
     };
+    if(pathname.includes("/posts/")){
+      setShowTocBtn(true);
+    }
   },[]);
   return (
     <>
@@ -186,6 +202,18 @@ export function Navbar() {
             <Icon icon="fa6-solid:arrow-up" />
           </button>
         </div>
+        { showTocBtn ?
+          <button 
+            className="toc-visible"
+            title="展开目录"
+            onClick={()=>{
+              setToc();
+            }}
+          >
+            <Icon icon="fa6-solid:list" />
+          </button>
+          : <></>
+        }
         <button 
           className="mobbar-visible"
           title="展开导航栏"

@@ -971,6 +971,106 @@ pre.hljs.wrap {
   right: -15px;
 }
 
+.etag-timeline {
+    margin: 0 0 0px 10px;
+    padding: 14px 20px 5px;
+    border-left: 2px solid var(--timeline-color,#425aef)
+}
+
+.etag-timeline.blue {
+    --timeline-color: #428bca;
+    --timeline-bg: rgba(66,139,202, 0.2)
+}
+
+.etag-timeline.pink {
+    --timeline-color: #ff69b4;
+    --timeline-bg: rgba(255,105,180, 0.2)
+}
+
+.etag-timeline.red {
+    --timeline-color: #f00;
+    --timeline-bg: rgba(255,0,0, 0.2)
+}
+
+.etag-timeline.purple {
+    --timeline-color: #6f42c1;
+    --timeline-bg: rgba(111,66,193, 0.2)
+}
+
+.etag-timeline.orange {
+    --timeline-color: #ff8c00;
+    --timeline-bg: rgba(255,140,0, 0.2)
+}
+
+.etag-timeline.green {
+    --timeline-color: #5cb85c;
+    --timeline-bg: rgba(92,184,92, 0.2)
+}
+
+.etag-timeline .timeline-item {
+    margin: 0 0 15px
+}
+
+.etag-timeline .timeline-item:hover .item-circle:before {
+    border: 3px solid var(--admi-theme);
+}
+
+
+.etag-timeline .timeline-item .timeline-item-title {
+    position: relative
+}
+
+
+
+.etag-timeline .timeline-item .item-circle:before {
+    position: absolute;
+    top: 50%;
+    left: -27px;
+    width: 6px;
+    height: 6px;
+    border: 3px solid var(--timeline-color,#425aef);
+    border-radius: 50%;
+    background: var(--admi-fontcolor);
+    content: '';
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+    -webkit-transform: translate(0,-50%);
+    -moz-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%); 
+    transform: translate(0,-50%)
+}
+
+.etag-timeline .timeline-item .item-circle>p {
+    margin: 0 0 8px;
+    font-weight: 500
+}
+
+.etag-timeline .timeline-item .timeline-item-content {
+    position: relative;
+    padding: 12px 15px;
+    border-radius: .5rem;
+    border: 0.5px solid var(--admi-fontcolor);
+    font-size: .93em
+}
+
+.etag-timeline .timeline-item .timeline-item-content>p {
+    margin-top: 0;
+}
+
+.etag-timeline .timeline-item .timeline-item-content>:last-child {
+    margin-bottom: 0
+}
+
+.etag-timeline+.timeline {
+    margin-top: -20px
+}
+
+
+
 span[style="undefined:invert"] {
   color: white;
   background-color: var(--admi-fontcolor);

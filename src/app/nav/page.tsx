@@ -1,20 +1,23 @@
 import "styles/Pages.css";
-import { siteConfigs } from "@/config";
+import "styles/PostContent.css";
 import React from "react";
+import { siteConfigs } from "@/config";
+import NavLinks  from "@/components/NavLinks"
 
 export const metadata = {
-  title: `收藏导航 | ${siteConfigs.title}`,
+  title: `网址收藏 | ${siteConfigs.title}`,
 };
-export default function Page() {
+
+export default async function Flinks() {
   return (
     <>
       <style>{`#navbar{position:fixed}`}</style>
       <div id="main-container" className="page">
-        <div id="article-container" className="page">
+        <div id="article-container" className="page flink">
           <div id="post-maincontent" className="page">
-            WIP.
+            <h1>网址收藏导航</h1>
+            <NavLinks />
           </div>
-          <hr />
         </div>
       </div>
     </>

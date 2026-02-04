@@ -5,6 +5,13 @@
     format("woff2");
 }
 
+@font-face {
+  font-family: "ZhuZiAWanFan";
+  font-display: swap;
+  src: url("../../public/ZhuZiAWanFan.ttf")
+    format("truetype");
+}
+
 :root {
   --admi-border: 1px solid#c9c9c9;
   --admi-blue: #6cf;
@@ -70,7 +77,7 @@
 
 
 body{
-  font-family: "ZhuZiAWan", sans-serif;
+  font-family: "ZhuZiAWan", "ZhuZiAWanFan",sans-serif;
   background-image: url('/111.png');
   background-attachment: fixed;
   margin: 0;

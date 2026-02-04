@@ -11,6 +11,7 @@ import NoteTag from "./extratags/Note";
 import ChatTag from "./extratags/Chat";
 import PromptTag from "./extratags/PromptShell";
 import TabsTag, { Tab } from "./extratags/TabsShell";
+import TimeLineTag from "./extratags/TimeLine";
 
 import JSMD5 from "js-md5";
 import Markdown from "markdown-to-jsx";
@@ -18,7 +19,7 @@ import FancyBox from "../thirdpartyjs/FancyBox";
 import HLJSNum from "../thirdpartyjs/HLJSNum";
 import KaTex from "../thirdpartyjs/KaTex";
 import Pangu from "../thirdpartyjs/Pangu";
-// import FriendLinks from "../FriendLinks";
+import FriendLinks from "../FriendLinks";
 
 // 安全的组件包装器
 function SafeComponent({
@@ -107,10 +108,13 @@ export default function MDToTSXWithPlugins({
               Tabs: (props: any) => (
                 <SafeComponent component={TabsTag} {...props} />
               ),
+              TimeLine: (props: any) => (
+                <SafeComponent component={TimeLineTag} {...props} />
+              ),
               Tab: (props: any) => <SafeComponent component={Tab} {...props} />,
-              // FriendLinks: (props: any) => (
-              //   <SafeComponent component={FriendLinks} {...props} />
-              // ),
+              FriendLinks: (props: any) => (
+                <SafeComponent component={FriendLinks} {...props} />
+              )
             },
             slugify(inp) {
               try {

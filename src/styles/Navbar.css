@@ -229,6 +229,21 @@
   margin: 2px;
   color: var(--admi-white);
 }
+.toc-visible{
+  display: none;
+  padding: 0;
+  /* display: flex; */
+}
+.toc-visible:hover{
+  box-shadow: 0px 0px 1px 1px var(--admi-theme) ;
+  /* display: flex; */
+}
+.toc-visible svg{
+  width: 18px;
+  height: 18px;
+  margin: 2px;
+  color: var(--admi-white);
+}
 
 @media screen and (max-width: 768px) {
   #navbar.show{
@@ -245,6 +260,18 @@
     left: 150px;
     margin: 10px;
     bottom: 0px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--admi-theme);
+    border: none;
+    border-radius: 5px;
+  }
+  .toc-visible{
+    display: block;
+    position: absolute;
+    left: 150px;
+    margin: 10px;
+    bottom: 40px;
     width: 30px;
     height: 30px;
     background-color: var(--admi-theme);
