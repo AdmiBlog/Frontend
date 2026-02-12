@@ -11,7 +11,7 @@ export default function AplayerBase({
         const aplayer = new Aplayer({
             container: document.getElementById('aplayer'),
             fixed: false,
-            autoplay: true,
+            autoplay: false,
             lrcType: 1,
             audio: [
                 {
