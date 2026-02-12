@@ -7,7 +7,7 @@ export default function AplayerBase({
 }
 ) {
     useEffect(() => {
-        const Aplayer=require("aplayer/dist/APlayer.min")
+        const Aplayer=require("aplayer/dist/APlayer.min");
         const aplayer = new Aplayer({
             container: document.getElementById('aplayer'),
             fixed: false,
