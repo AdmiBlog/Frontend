@@ -1,6 +1,5 @@
 "use client";
 import { useEffect } from "react";
-import Aplayer from "aplayer/dist/APlayer.min";
 import '@/styles/APlayer.css';
 
 export default function AplayerBase({
@@ -8,6 +7,7 @@ export default function AplayerBase({
 }
 ) {
     useEffect(() => {
+        const Aplayer=require("aplayer/dist/APlayer.min")
         const aplayer = new Aplayer({
             container: document.getElementById('aplayer'),
             fixed: false,
