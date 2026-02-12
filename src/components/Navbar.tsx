@@ -8,9 +8,10 @@ import { useRouter } from "nextjs-toploader/app";
 import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import { useContext } from "react";
-import SearchBox from "components/navlibs/SearchBox";
+import SearchBox from "components/SearchBox";
 import { translatePage } from "@/utils/tw_cn"
 import { usePathname } from "next/navigation";
+import CommentBarrage from "@/components/thirdpartyjs/CommentBarrage";
 
 export function Navbar() {
   const router = useRouter();
@@ -22,6 +23,20 @@ export function Navbar() {
   const [transBtn,setTransBtn]=useState("繁");
   const [showTocBtn,setShowTocBtn]=useState(false);
   const [tocHide,setTocHide]=useState(true);
+  const [barrageShow, setBarrageShow] = useState(2);
+  useEffect(() => {
+    if (barrageShow != 2) {
+      document.querySelector("#barrage-container")!.className = barrageShow
+        ? "show"
+        : "hide";
+      localStorage.setItem("barrageShow", barrageShow ? "true" : "false");
+    }
+  }, [barrageShow]);
+  useEffect(() => {
+    if (localStorage.getItem("barrageShow") == "false") setBarrageShow(0);
+    else setBarrageShow(1);
+  }, []);
+
   function setToc() {
     setTocHide(!tocHide);
     if (tocHide)
@@ -125,10 +140,10 @@ export function Navbar() {
         <div id="menu-buttons">
           <button
             className="menu-button"
-            title="小链接"
-            onClick={undefined}
+            title="开闭评论浮窗"
+            onClick={() => setBarrageShow((bs) => Number(!bs))}
           >
-            <Icon icon="fa6-solid:arrow-up-right-from-square" />
+            <Icon icon="mingcute:danmaku-fill" />
           </button>
           <button
             className="menu-button"
@@ -225,6 +240,9 @@ export function Navbar() {
         </button>
       </div>
       <SearchBox show={searchBoxShow} closeFunction={setSearchBoxShow} />
+      <CommentBarrage
+        toggleBarrage={() => setBarrageShow((bs) => Number(!bs))}
+      />
     </>
   );
 }

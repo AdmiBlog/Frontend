@@ -149,10 +149,10 @@ export function TwikooCountHome() {
         next: { tags: ["posts"] },
       });
       const pages = [
-        "/messageboard",
-        "/messageboard/",
-        "/speaks",
-        "/speaks/",
+        "/comments",
+        "/comments/",
+        "/essay",
+        "/essay/",
         "/about",
         "/about/",
         "/links",

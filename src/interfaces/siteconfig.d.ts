@@ -15,6 +15,7 @@ export declare interface SiteConfig {
   backEndUrl: string;
   falldownAvatar: string;
   falldownImg: string;
+  clarity: string;
 }
 export declare interface Social {
   name: string;

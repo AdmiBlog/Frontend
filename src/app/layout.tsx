@@ -1,5 +1,4 @@
 "use client";
-import type { Metadata } from "next";
 import { siteConfigs } from "@/config"; 
 import NextTopLoader from "nextjs-toploader";
 import { Navbar } from "@/components/Navbar";
@@ -10,6 +9,7 @@ import LicenseTips from "@/components/thirdpartyjs/LicenseTips";
 import { useState,useEffect } from 'react';
 import { defaultSettings,getSettings,SettingsContext } from "@/utils/settings";
 import type { Settings } from "@/utils/settings";
+import ClarityScript from "@/components/thirdpartyjs/Clarity";
 
 process.env.TZ = "Asia/Shanghai";
 
@@ -23,7 +23,6 @@ export default function RootLayout({
     getSettings().then((fetchedSettings) => {
       setSettings(fetchedSettings);
     });
-    
   }, []);
   return (
     <html lang="zh-cn" data-theme={settings.colorMode}>
@@ -42,6 +41,7 @@ export default function RootLayout({
             {children}
             <Footer />
           </div>
+          <ClarityScript />
         </SettingsContext.Provider>
       </body>
     </html>

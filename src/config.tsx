@@ -46,6 +46,7 @@ export const siteConfigs: SiteConfig = {
       icon: <Icon icon="fa6-solid:rss" />,
     },
   ],
+  clarity: "pdd3rkijaq",
 };
 
 export const MenuItems: MenuItem[] = [

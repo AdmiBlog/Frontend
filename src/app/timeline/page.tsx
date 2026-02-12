@@ -1,9 +1,9 @@
 import "styles/Pages.css";
 import { siteConfigs } from "@/config";
 import "@/styles/PostContent.css"
-import TimeLineTag from "@/components/mdxlibs/extratags/TimeLine"
 import React from "react";
 import { TwikooBaseComment } from "@/components/thirdpartyjs/Twikoo";
+import { Timelines } from "@/components/Timelines"
 
 export const metadata = {
   title: `时间戳 | ${siteConfigs.title}`,
@@ -17,7 +17,7 @@ export default function Page() {
           <div id="post-maincontent" className="page">
             <h1>时间戳</h1>
             <br/>
-            <TimeLineTag time="2025-02-12" >1111</TimeLineTag>
+            <Timelines />
             <br/>
             <br/>
           </div>

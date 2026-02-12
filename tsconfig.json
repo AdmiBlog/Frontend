@@ -30,6 +30,6 @@
     ".next/types/**/*.ts",
     "src/utils/annogen.jsx",
     "src/components/HLJSNum.jsx"
-  ],
+, "src/components/thirdpartyjs/Aplayer.jsx", "src/components/thirdpartyjs/Meting.jsx"  ],
   "exclude": ["node_modules"]
 }

@@ -32,7 +32,7 @@ const CommentBarrage = ({ toggleBarrage }: { toggleBarrage: () => void }) => {
           body: JSON.stringify({
             event: "COMMENT_GET",
             "commentBarrageConfig.accessToken":
-              "1059857c25a2ce9fba9cff298f4f33ee",
+              "86236384889352c50e443a4a4bc3855d",
             url: window.location.pathname,
           }),
         });
