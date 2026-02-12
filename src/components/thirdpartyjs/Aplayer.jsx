@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import Aplayer from "APlayer";
+import Aplayer from "aplayer/dist/APlayer.min";
 import '@/styles/APlayer.css';
 
 export default function AplayerBase({
