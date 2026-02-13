@@ -17,7 +17,7 @@ export default function AplayerBase({
                 {
                     name: name,
                     artist: artist,
-                    url: url.replace("http","https"),
+                    url: url.replace("http://","https://"),
                     cover: cover,
                     lrc: lyrics
                 }
@@ -26,7 +26,8 @@ export default function AplayerBase({
     },[]);
     return (
         <>
-            <span>{url}</span>
+            <span>链接：{url}</span>
+            <span>链接：{url.replace("http://","https://")}</span>
             <div id="aplayer"></div>
         </>
     );
