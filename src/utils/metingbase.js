@@ -7,11 +7,11 @@ export async function getSongInfo(platform,songId){
     try{
         meting.site(platform);
         const result = JSON.parse(await meting.song(songId))[0];
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        const urlInfo = await meting.url(result.url_id, 320);
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        // await new Promise(resolve => setTimeout(resolve, 2000));
+        const urlInfo = JSON.parse(await meting.url(result.url_id, 320))["url"];
+        // await new Promise(resolve => setTimeout(resolve, 2000));
         const lyrics = JSON.parse(await meting.lyric(result.lyric_id))["lyric"];
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        // await new Promise(resolve => setTimeout(resolve, 2000));
         const cover = JSON.parse(await meting.pic(result.pic_id, 300))["url"];
         const finalResult= {...result,urlInfo:urlInfo,lyrics:lyrics,cover:cover};
         return finalResult;
