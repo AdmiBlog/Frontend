@@ -8,7 +8,6 @@ export default function AplayerBase({
 ) {
     useEffect(() => {
         const Aplayer=require("aplayer/dist/APlayer.min");
-        console.log(url);
         const aplayer = new Aplayer({
             container: document.getElementById('aplayer'),
             fixed: false,
@@ -18,7 +17,7 @@ export default function AplayerBase({
                 {
                     name: name,
                     artist: artist,
-                    url: url,
+                    url: url.replace("http","https"),
                     cover: cover,
                     lrc: lyrics
                 }
@@ -27,6 +26,7 @@ export default function AplayerBase({
     },[]);
     return (
         <>
+            <span>{url}</span>
             <div id="aplayer"></div>
         </>
     );
