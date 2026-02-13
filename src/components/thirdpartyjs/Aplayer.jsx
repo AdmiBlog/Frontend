@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import '@/styles/APlayer.css';
 
 export default function AplayerBase({
-    name, artist, url, cover, lyrics
+    data
 }
 ) {
     useEffect(() => {
@@ -15,18 +15,18 @@ export default function AplayerBase({
             lrcType: 1,
             audio: [
                 {
-                    name: name,
-                    artist: artist,
-                    url: url,
-                    cover: cover,
-                    lrc: lyrics
+                    name: data.name,
+                    artist: data.artist,
+                    url: data.url,
+                    cover: data.cover,
+                    lrc: data.lyrics
                 }
             ]
         });
     },[]);
     return (
         <>
-            <span>链接：{url}</span>
+            <span>链接：{data.toString()}</span>
             <div id="aplayer"></div>
         </>
     );

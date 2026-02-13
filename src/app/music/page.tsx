@@ -17,7 +17,7 @@ export default async function MusicPage() {
         <div id="article-container" className="page">
           <div id="post-maincontent" className="page">
             <h1>音乐厅</h1>
-            <AplayerBase name={result.name} artist={result.artist} url={result.urlInfo} cover={result.cover} lyrics={result.lyrics} />
+            <AplayerBase data={result} />
           </div>
         </div>
       </div>
