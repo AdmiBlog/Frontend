@@ -6,9 +6,12 @@ meting.format(true);
 export async function getSongInfo(platform,songId){
     try{
         meting.site(platform);
+        // const rrr= JSON.parse(await meting.search("See you again变速"));
+        // console.log(rrr);
         const result = JSON.parse(await meting.song(songId))[0];
+        console.log(result);
         // await new Promise(resolve => setTimeout(resolve, 2000));
-        const urlInfo = JSON.parse(await meting.url(result.url_id, 320))["url"];
+        const urlInfo = JSON.parse(await meting.url(songId, 320))["url"];
         // await new Promise(resolve => setTimeout(resolve, 2000));
         const lyrics = JSON.parse(await meting.lyric(result.lyric_id))["lyric"];
         // await new Promise(resolve => setTimeout(resolve, 2000));

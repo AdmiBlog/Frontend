@@ -17,7 +17,7 @@ export default function AplayerBase({
                 {
                     name: name,
                     artist: artist,
-                    url: url.replace("http://","https://"),
+                    url: url,
                     cover: cover,
                     lrc: lyrics
                 }
