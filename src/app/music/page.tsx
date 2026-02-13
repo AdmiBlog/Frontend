@@ -9,7 +9,7 @@ export const metadata = {
 
 
 export default async function MusicPage() {
-  const result = await getSongInfo("netease","1885677249");
+  const result = await getSongInfo("netease","1885677249") || {};
   return (
     <>
       <style>{`#navbar{position:fixed}`}</style>
