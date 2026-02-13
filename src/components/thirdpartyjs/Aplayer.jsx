@@ -12,21 +12,21 @@ export default function AplayerBase({
             container: document.getElementById('aplayer'),
             fixed: false,
             autoplay: false,
-            lrcType: 1,
+            lrcType: 3,
             audio: [
                 {
-                    name: data.name,
-                    artist: data.artist,
+                    name: data.name || data.title || 'Audio name',
+                    artist: data.artist || data.author || 'Audio artist',
                     url: data.url,
-                    cover: data.cover,
-                    lrc: data.lyrics
+                    cover: data.cover || data.pic,
+                    lrc: data.lrc || data.lyric || '',
+                    type: data.type || 'auto',
                 }
             ]
         });
     },[]);
     return (
         <>
-            <span>链接：{JSON.stringify(data)}</span>
             <div id="aplayer"></div>
         </>
     );
