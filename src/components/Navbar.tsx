@@ -24,6 +24,7 @@ export function Navbar() {
   const [showTocBtn,setShowTocBtn]=useState(false);
   const [tocHide,setTocHide]=useState(true);
   const [barrageShow, setBarrageShow] = useState(2);
+  const [playerPaused,setPlayerPaused]=useState(true);
   useEffect(() => {
     if (barrageShow != 2) {
       document.querySelector("#barrage-container")!.className = barrageShow
@@ -148,9 +149,15 @@ export function Navbar() {
           <button
             className="menu-button"
             title="音乐"
-            onClick={undefined}
+            onClick={()=>{
+              (window as any).aplayer?.toggle();
+              setPlayerPaused((window as any).aplayer?.audio.paused);
+            }}
           >
-            <Icon icon="fa6-solid:music" />
+            {playerPaused ?
+            <Icon icon="fa6-solid:music" /> :
+            <Icon icon="fa6-solid:pause" />
+            }
           </button>
           <button
             className="menu-button"

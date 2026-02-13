@@ -1,6 +1,10 @@
 "use client";
 import { useEffect } from "react";
+
 import '@/styles/APlayer.css';
+
+
+
 
 export default function AplayerBase({
     data
@@ -8,26 +12,28 @@ export default function AplayerBase({
 ) {
     useEffect(() => {
         const Aplayer=require("aplayer/dist/APlayer.min");
-        const aplayer = new Aplayer({
-            container: document.getElementById('aplayer'),
-            fixed: false,
-            autoplay: false,
-            lrcType: 3,
-            audio: [
-                {
-                    name: data.name || data.title || 'Audio name',
-                    artist: data.artist || data.author || 'Audio artist',
-                    url: data.url,
-                    cover: data.cover || data.pic,
-                    lrc: data.lrc || data.lyric || '',
-                    type: data.type || 'auto',
-                }
-            ]
-        });
-    },[]);
+        window.aplayer = data?
+            (new Aplayer({
+                container: document.getElementById("aplayer"),
+                fixed: false,
+                autoplay: false,
+                lrcType: 3,
+                listMaxHeight: 20,
+                audio: data.map((item,index)=>
+                    ({
+                        name: item.name || item.title || 'Audio name',
+                        artist: item.artist || item.author || 'Audio artist',
+                        url: item.url,
+                        cover: item.cover || item.pic,
+                        lrc: item.lrc || item.lyric || '',
+                        type: item.type || 'auto',
+                    })
+                )
+            }))
+        :undefined;
+    },[data]);
     return (
         <>
-            <div id="aplayer"></div>
         </>
     );
 
