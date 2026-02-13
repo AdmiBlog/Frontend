@@ -11,8 +11,9 @@ export async function getSongInfo(platform,songId){
         let result;
         const url="https://api.i-meto.com/meting/api?server="+platform+"&type=song&id="+songId+"&r=0.122";
         // console.log(url);
-        await fetch(url).then(res => res.json())
+        await fetch(url).then(async(res) => res.ok ? (await res.json()): {})
         .then((data)=>{result=data;});
+        console.log(result);
         return result[0];
     }catch(e){
         return {"error": e};

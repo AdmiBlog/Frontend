@@ -9,7 +9,7 @@ export const metadata = {
 
 
 export default async function MusicPage() {
-  const result = await getSongInfo("netease","1885677249") || {};
+  const res = await getSongInfo("netease","1885677249");
   return (
     <>
       <style>{`#navbar{position:fixed}`}</style>
@@ -17,7 +17,7 @@ export default async function MusicPage() {
         <div id="article-container" className="page">
           <div id="post-maincontent" className="page">
             <h1>音乐厅</h1>
-            <AplayerBase data={result} />
+            <AplayerBase data={res} />
           </div>
         </div>
       </div>
