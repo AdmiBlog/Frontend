@@ -26,7 +26,7 @@ export default function AplayerBase({
     },[]);
     return (
         <>
-            <span>链接：{data.toString()}</span>
+            <span>链接：{JSON.stringify(data)}</span>
             <div id="aplayer"></div>
         </>
     );
