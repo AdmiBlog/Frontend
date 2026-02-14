@@ -27,24 +27,25 @@ export default function RootLayout({
   useEffect(() => {
     getSettings().then((fetchedSettings) => {
       setSettings(fetchedSettings);
-      setInterval(()=>{
-        // console.log(playerHTML);
-        if(window.location.href.includes("/music")){
-          const div1 = document.getElementById('aplayer');
-          const div2 = document.getElementById('musicpage-aplayer');
-          if(div1&&div2&&!(div1?.parentElement==div2)){
-            playerRef.current=div1;
-            div2.appendChild(div1)
-          }
-        }
-        else{
-          const div1 = document.getElementById('out-aplayer');
-          if(div1&&playerRef.current&&(!(playerRef.current?.parentElement==div1))){
-            div1.appendChild(playerRef.current);
-          }
-        }
-      },1000);
     });
+  }, []);
+  useEffect(() => {
+    setInterval(()=>{
+      if(window.location.href.includes("/music")){
+        const div1 = document.getElementById('aplayer');
+        const div2 = document.getElementById('musicpage-aplayer');
+        if(div1&&div2&&!(div1?.parentElement==div2)){
+          playerRef.current=div1;
+          div2.appendChild(div1)
+        }
+      }
+      else{
+        const div1 = document.getElementById('out-aplayer');
+        if(div1&&playerRef.current&&(!(playerRef.current?.parentElement==div1))){
+          div1.appendChild(playerRef.current);
+        }
+      }
+    },1000);
   }, []);
   useEffect(()=>{(async()=>{
     setMusicData(await getPlayListInfo("tencent","9307834870"));

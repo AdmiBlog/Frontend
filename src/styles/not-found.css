@@ -1,0 +1,18 @@
+#notfound{
+  display: block;
+  text-align: center;
+  justify-content: center;
+}
+#notfound-text{
+  font-size: 100 !important;
+}
+
+#article-container {
+  flex-grow: 1;
+  height: fit-content;
+  padding: 40px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  /* width: 0; */
+  background-color: var(--admi-acrylic2);
+}
