@@ -32,8 +32,8 @@ export default function RootLayout({
         if(window.location.href.includes("/music")){
           const div1 = document.getElementById('aplayer');
           const div2 = document.getElementById('musicpage-aplayer');
-          playerRef.current=div1;
           if(div1&&div2&&!(div1?.parentElement==div2)){
+            playerRef.current=div1;
             div2.appendChild(div1)
           }
         }
