@@ -41,8 +41,8 @@ export default async function Flinks() {
             <FriendLinks />
             <MDToTSXWithPlugins mdContent={content}/>
           </div>
+          <TwikooBaseComment />
         </div>
-        <TwikooBaseComment />
       </div>
     </>
   );
