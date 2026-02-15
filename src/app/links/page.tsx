@@ -5,6 +5,7 @@ import { siteConfigs } from "@/config";
 import MDToTSXWithPlugins from "@/components/mdxlibs";
 import FriendLinks  from "@/components/FriendLinks"
 import { notFound } from "next/navigation";
+import { TwikooBaseComment } from "@/components/thirdpartyjs/Twikoo";
 
 export const metadata = {
   title: `友链 | ${siteConfigs.title}`,
@@ -41,6 +42,7 @@ export default async function Flinks() {
             <MDToTSXWithPlugins mdContent={content}/>
           </div>
         </div>
+        <TwikooBaseComment />
       </div>
     </>
   );
