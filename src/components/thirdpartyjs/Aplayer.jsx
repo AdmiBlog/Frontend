@@ -18,7 +18,7 @@ export default function AplayerBase({
                 fixed: false,
                 autoplay: false,
                 lrcType: 3,
-                listMaxHeight: 20,
+                listMaxHeight: 0,
                 audio: data.map((item,index)=>
                     ({
                         name: item.name || item.title || 'Audio name',
@@ -31,6 +31,7 @@ export default function AplayerBase({
                 )
             }))
         :undefined;
+        window.setMusicIconFunc();
     },[data]);
     return (
         <>

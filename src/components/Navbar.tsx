@@ -31,8 +31,10 @@ export function Navbar() {
         ? "show"
         : "hide";
       localStorage.setItem("barrageShow", barrageShow ? "true" : "false");
+      
     }
   }, [barrageShow]);
+  
   useEffect(() => {
     if (localStorage.getItem("barrageShow") == "false") setBarrageShow(0);
     else setBarrageShow(1);
@@ -57,6 +59,14 @@ export function Navbar() {
         const randomIndex: number = Math.round(Math.random() * posts.length);
         router.push(`/posts/${posts[randomIndex]}`);
       }
+    };
+    (window as any).setMusicIconFunc=()=>{
+      (window as any).aplayer?.on("play",()=>{
+          setPlayerPaused(false);
+        });
+        (window as any).aplayer?.on("pause",()=>{
+          setPlayerPaused(true);
+        });
     };
     if(pathname.includes("/posts/")){
       setShowTocBtn(true);
