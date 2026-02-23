@@ -259,7 +259,7 @@
     position: absolute;
     left: 150px;
     margin: 10px;
-    bottom: 0px;
+    bottom: 50px;
     width: 30px;
     height: 30px;
     background-color: var(--admi-theme);
@@ -271,7 +271,7 @@
     position: absolute;
     left: 150px;
     margin: 10px;
-    bottom: 40px;
+    bottom: 90px;
     width: 30px;
     height: 30px;
     background-color: var(--admi-theme);
@@ -285,7 +285,12 @@
   display: flex;
   width: 150px;
   flex-wrap: wrap;
-  bottom: 0;
   position: absolute;
   justify-content: center;
+}
+
+@media screen and (min-width: 768px){
+  #menu-buttons{
+    bottom: 0;
+  }
 }

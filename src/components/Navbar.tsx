@@ -68,9 +68,16 @@ export function Navbar() {
           setPlayerPaused(true);
         });
     };
-    if(pathname.includes("/posts/")){
-      setShowTocBtn(true);
-    }
+    setInterval(() => {
+      if((window as any).location.href.includes("/posts/")){
+        setShowTocBtn(true);
+      }
+      else{
+        setShowTocBtn(false);
+      }
+      console.log((window as any).location.href);
+    }, 500);
+    
   },[]);
   return (
     <>
