@@ -7,7 +7,7 @@ export async function getPlayListInfo(platform: string,id: string):Promise<Music
             type: "error",
             url: ""
         }];
-        const url="https://api.i-meto.com/meting/api?server="+platform+"&type=playlist&id="+id+"&r=0.122";
+        const url="https://api.qijieya.cn/meting/?server="+platform+"&type=playlist&id="+id;
         await fetch(url,{next: { revalidate: 7200, tags: ["music"] }}).then(async(res) => res.ok ? (await res.json()): {})
         .then((data)=>{result=data;});
         return result;
